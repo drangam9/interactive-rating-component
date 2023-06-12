@@ -53,8 +53,8 @@ Users should be able to:
 
 This project taught me how to manipulate the DOM with Javascript. It's also the first project where I use Sass, and I have to admit, it really is Syntactically Awesome.
 
-I also learned a little thing in CSS called 'not'. This helped me make the selected rating lose the hover effect (selecting the rating changed its bg color to orange, but the hover effect kept changing it to gray whenever the cursor was on it).
-This was fixed by using 'not', which makes the hover property availabale only on elements that DON'T have the '.clicked' class in them.
+I also learned a little thing in CSS called ```not```. This helped me make the selected rating lose the hover effect (selecting the rating changed its bg color to orange, but the hover effect kept changing it to gray whenever the cursor was on it).
+This was fixed by using ```not```, which makes the hover property availabale only on elements that DON'T have the ```.clicked``` class in them.
 
 ```css
 .rate-score:not(.clicked):hover {
@@ -68,13 +68,13 @@ This was fixed by using 'not', which makes the hover property availabale only on
 
 ### Continued development
 
-The main area that I should be focusing on more from now on is using Javascript to create functionality. I should also look further into more CSS properties like 'not' that might save me from trying over-complicated things in js.
+The main area that I should be focusing on more from now on is using Javascript to create functionality. I should also look further into more CSS properties like `not` that might save me from trying over-complicated things in js.
 
 ### Useful resources
 
-- [Using 'not' in CSS](https://stackoverflow.com/questions/30118246/disable-hover-on-click) - This Stack Overflow question helped me solve the issue mentioned above.
+- [Using `not` in CSS](https://stackoverflow.com/questions/30118246/disable-hover-on-click) - This Stack Overflow question helped me solve the issue mentioned above.
 
 ## Author
 
-- Website - [drangam9](https://www.your-site.com)
+- Website - [drangam9](https://github.com/drangam9)
 - Frontend Mentor - [@drangam9](https://www.frontendmentor.io/profile/drangam9)
