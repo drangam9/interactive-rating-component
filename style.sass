@@ -1,0 +1,81 @@
+@mixin flex($direction: row)
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: $direction
+
+$fonts: 'Overpass', serif
+$lightgray: hsl(217, 12%, 63%)
+$white: rgb(241, 241, 241)
+$orange-primary: rgb(255, 118, 17)
+$darkblue-bg: linear-gradient(rgb(32, 38, 50), rgb(23, 30, 40))
+$medium-gray: rgb(38, 47, 56)
+$verydarkblue: hsl(216, 12%, 8%)
+html, body
+    @include flex
+    height: 100%
+    margin: 0
+    color: $white
+    font-family: $fonts
+    background-color: $verydarkblue
+p
+    opacity: 0.5
+.main-card
+    @include flex($direction: column)
+    background: $darkblue-bg
+    padding: 20px
+    max-width: 20em
+    border-radius: 15px
+.text-box
+    display: flex
+    align-items: flex-start
+    flex-direction: column
+.score
+    @include flex
+    justify-content: space-between
+    width: 100%
+.rate-score, .star
+    @include flex
+    border-radius: 50px
+    height: 50px
+    width: 50px
+    background-color: $medium-gray
+.rate-score:not(.clicked):hover
+    background-color: $lightgray
+    cursor: pointer
+    p
+        opacity: 1
+.star
+    color: $orange-primary
+button
+    width: 100%
+    padding: 15px 0px
+    text-transform: uppercase
+    background-color: $orange-primary
+    color: $white
+    border: 0px
+    border-radius: 50px
+    margin: 20px 0px
+    letter-spacing: 2px
+    &:hover
+        background-color: $white
+        color: $orange-primary
+        cursor: pointer
+.clicked
+    background-color: $orange-primary
+    opacity: 1
+    & p
+        opacity: 1
+#second-card
+    @include flex($direction: column)
+    display: none
+    text-align: center
+.selection
+    border-radius: 50px
+    background-color: $medium-gray
+    color: $orange-primary
+    padding: 10px 0px
+    width: 60%
+    opacity: 1
+img
+    padding: 10px 0px

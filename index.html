@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Interactive rating component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+</head>
+
+<body>
+
+  <!-- Rating state start -->
+  <div class="main-card">
+    <div id="first-card">
+      <div class="text-box">
+        <div class="star">
+          <img src="./images/icon-star.svg" alt="star icon">
+        </div>
+        <h2>How did we do?</h2>
+
+        <p>Please let us know how we did with your support request. All feedback is appreciated
+          to help us improve our offering!</p>
+      </div>
+      <div class="score">
+        <div class="rate-score" id="1" onClick="isSelected(1)">
+          <p>1</p>
+        </div>
+        <div class="rate-score" id="2" onClick="isSelected(2)">
+          <p>2</p>
+        </div>
+        <div class="rate-score" id="3" onClick="isSelected(3)">
+          <p>3</p>
+        </div>
+        <div class="rate-score" id="4" onClick="isSelected(4)">
+          <p>4</p>
+        </div>
+        <div class="rate-score" id="5" onClick="isSelected(5)">
+          <p>5</p>
+        </div>
+
+      </div>
+      <button onclick="onBtnClick()">Submit</button>
+    </div>
+    <!-- Rating state end -->
+
+    <!-- Thank you state start -->
+    <div id="second-card">
+      <img src="./images/illustration-thank-you.svg">
+      <p class="selection">You selected
+        <span id="final-score"></span> out of 5
+      </p>
+
+      <h2>Thank you!</h2>
+
+      <p>We appreciate you taking the time to give a rating. If you ever need more support,
+        don't hesitate to get in touch!</p>
+    </div>
+    <!-- Thank you state end -->
+
+  </div>
+</body>
+<script>
+  function isSelected(selectedId) {
+    // Get all rate-score elements
+    var rateScores = document.getElementsByClassName('rate-score');
+
+    // Remove 'selected' class from all elements
+    for (var i = 0; i < rateScores.length; i++) {
+      rateScores[i].classList.remove('clicked');
+    }
+
+    // Add 'selected' class to the selected element
+    var selectedElement = document.getElementById(selectedId);
+    selectedElement.classList.add('clicked');
+    globalThis.index = selectedId;
+  }
+  function onBtnClick() {
+    document.getElementById("first-card").style.display = "none";
+    document.getElementById("second-card").style.display = "flex";
+    document.getElementById("final-score").innerText = globalThis.index;
+  }
+
+</script>
+
+</html>
